@@ -4,6 +4,8 @@
 
 Pokédex is a web application that allows users to browse and view details of the first 151 Pokémon. It is built using HTML5, JavaScript, and Tailwind CSS for styling. The application fetches data from the PokéAPI to display various details, including Pokémon types, abilities, and stats. The user can navigate through Pokémon using arrows, search for specific Pokémon, and toggle between normal and shiny sprites.
 
+Purely so if anyone wanted to try it out, they can do so here: https://kkdn7355.github.io/Pokedex/
+
 ## Demo
 
 <p align="center">
