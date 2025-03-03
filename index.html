@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Pokédex</title>
+        <link href="output.css" rel="stylesheet">
+        <script src="main.js" defer></script>
+        <script src="search.js" defer></script>
+    </head>
+    <body class="h-screen overflow-hidden flex">
+        <!-- Left Section (Pokémon Details Panel) -->
+        <div id="left-panel"
+             class="flex flex-col items-center rounded-3xl shadow-2xl w-2/3
+                    bg-gradient-to-b from-[#F0F0F0] to-[#CFCFCF]
+                    m-2
+                    p-2">
+            <!-- ID -->
+            <p id="pokemon-id"
+               class="font-mono text-gray-700 text-2xl
+                      m-1
+                      p-1">
+            </p>
+            <!-- Name -->
+            <h2 id="pokemon-name"
+                class="font-bold text-gray-800 text-2xl uppercase
+                       m-1
+                       p-1">
+            </h2>
+            <!-- Image Section -->
+            <div class="flex items-center w-full
+                        m-1
+                        p-1">
+                <!-- Left Arrow (Initially Hidden for Pokémon #1) -->
+                <div class="flex justify-center w-1/3">
+                    <img id="chevron-left" src="./assets/chevron_left.svg"
+                        class="w-full aspect-square cursor-pointer hidden
+                               m-1
+                               p-1">
+                </div>
+
+                <!-- Pokémon Image (Centered, Takes Available Space) -->
+                <div class="flex items-center justify-center w-1/3">
+                    <img id="pokemon-image"
+                        class="w-full aspect-square cursor-pointer object-contain
+                               m-1
+                               p-1">
+                </div>
+
+                <!-- Right Arrow -->
+                <div class="flex justify-center w-1/3">
+                    <img id="chevron-right" src="./assets/chevron_right.svg"
+                        class="w-full aspect-square cursor-pointer
+                               m-1
+                               p-1">
+                </div>
+            </div>
+
+            <!-- Description -->
+            <p id="pokemon-description"
+               class="italic text-gray-700
+                      m-1
+                      p-1">
+            </p>
+            <!-- Types -->
+            <div id="pokemon-types"
+                 class="flex items-center w-1/3
+                        gap-2
+                        m-1
+                        p-1">
+            </div>
+            <!-- Abilities -->
+            <div class="flex items-center w-1/3 h-[10vh]
+                        gap-2
+                        m-1
+                        p-1">
+                <div class="text-right w-1/2">
+                    <p class="font-semibold self-start text-gray-700">Abilities:</p>
+                </div>
+                <div class="text-left w-1/2">
+                    <ul id="pokemon-abilities"
+                        class="flex flex-col text-blue-500">
+                    </ul>
+                </div>
+            </div>
+            <!-- Stats -->
+            <div id="pokemon-stats-container"
+                 class="flex flex-col items-center justify-center space-y-2 text-gray-900 w-full
+                        m-1
+                        p-1">
+            </div>
+        </div>
+
+        <!-- Right Section -->
+        <div class="flex flex-col items-center w-1/3
+                    m-2
+                    p-2">
+            <!-- Title -->
+            <div class="flex items-center justify-center w-4/5
+                        gap-2
+                        m-1
+                        p-1">
+                <img src="./assets/pokeball.svg"/>
+                <h1 id="pokedex-title" class="text-4xl text-white cursor-pointer">
+                    Pokédex
+                </h1>
+                <img src="./assets/pokeball.svg"/>
+            </div>
+            <!-- Search Bar -->
+            <div class="w-4/5
+                        m-1
+                        p-1">
+                <div class="relative flex items-center shadow-inner w-full bg-white
+                            h-10 px-4 rounded-3xl
+                            m-1
+                            p-1">
+                    <!-- Search Icon -->
+                    <img src="./assets/search.svg" class="w-4 h-4 text-gray-500"/>
+                    <!-- Input Field -->
+                    <input type="text" id="search-input" placeholder="Search"
+                        class="text-lg w-full bg-transparent outline-none px-2"/>
+                    <!-- Close Icon -->
+                    <img src="./assets/cross.svg" id="search-close-icon"
+                        class="w-5 h-5 text-gray-500 cursor-pointer hidden"/>
+                </div>
+            </div>
+            <!-- Pokémon List -->
+            <div id="pokemon-list"
+                class="flex flex-col items-center list-none no-scrollbar overflow-y-auto rounded-lg shadow-inner max-h-[80vh] w-[calc(100%-1rem)]
+                     bg-gray-100
+                       m-1
+                       p-1">
+            </div>
+        </div>
+    </body>
+</html>
